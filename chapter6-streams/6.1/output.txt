@@ -1,0 +1,3 @@
+gzip: 8ms, 37
+brotli: 1ms, 1
+deflate: 1ms, 8
