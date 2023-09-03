@@ -30,7 +30,7 @@ const displayFramesInterval = async (rs) => {
         rs.push('\033[2J\033[3J\033[H');
         rs.push(colors[colorOptions[colorIndex]](frames[index].toString()))
         index = (index + 1) % frames.length
-    }, 1000)
+    }, 70)
 }
 
 
