@@ -1,16 +1,16 @@
 'use strict'
 
 class Queue {
+    #items = []
+    #resolvers = []
     constructor(executor) {
-        this.items = []
-        this.resolvers = []
 
         const enqueue = async (element) => {
-            if(this.resolvers.length !== 0) {
-                const resolver = this.resolvers.shift()
+            if(this.#resolvers.length !== 0) {
+                const resolver = this.#resolvers.shift()
                 resolver(element)
             } else {
-                this.items.push(element)
+                this.#items.push(element)
             }
         }
 
@@ -18,15 +18,15 @@ class Queue {
     }
 
     async dequeue() {
-        if(this.items.length === 0) {
+        if(this.#items.length === 0) {
             console.warn('Queue is empty! Waiting for an element...')
             return new Promise((resolve) => {
-                this.resolvers.push(resolve)
+                this.#resolvers.push(resolve)
             })
         }
         return new Promise((resolve, reject) => {
             try {
-                const element = this.items.shift()
+                const element = this.#items.shift()
                 resolve(element)
             }
             catch(err) {
