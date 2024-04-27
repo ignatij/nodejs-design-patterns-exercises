@@ -1,0 +1,3 @@
+INFO This is written in file
+DEBUG This is written in file
+WARN This is written in file
