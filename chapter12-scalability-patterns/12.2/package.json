@@ -1,0 +1,19 @@
+{
+  "name": "12.2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "consul:dev": "consul agent -dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "consul": "^1.2.0",
+    "forever": "^4.0.3",
+    "http-proxy": "^1.18.1",
+    "portfinder": "^1.0.32"
+  }
+}
